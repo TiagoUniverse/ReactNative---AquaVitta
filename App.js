@@ -13,8 +13,16 @@ export default function App() {
       .then(resposta => resposta.json())
         .then( json => {
           const rio = {
+            nomeRio: json.rio,
             endereco: json.endereco,
+            condutividade: json.condutividade,
             latitude: json.latitude,
+            longitude: json.longitude,
+            oxigeniodissolvido: json.oxigeniodissolvido,
+            potencialhidrogenico: json.potencialhidrogenico,
+            salinidade: json.salinidade,
+            temperatura: json.temperatura,
+            turbidez: json.turbidez
           };
           setRioEscolhido(rio);
         })
@@ -31,7 +39,16 @@ export default function App() {
           </View>
           {rioEscolhido != null && (
           <View style={styles.pokemonBox}>
+            <Text style={styles.pokemonPeso}>Nome do rio: {rioEscolhido.nomeRio}</Text>
             <Text style={styles.pokemonPeso}>Endereço: {rioEscolhido.endereco}</Text>
+            <Text style={styles.pokemonPeso}>condutividade: {rioEscolhido.condutividade}</Text>
+            <Text style={styles.pokemonPeso}>Latitude: {rioEscolhido.latitude}</Text>
+            <Text style={styles.pokemonPeso}>Longitude: {rioEscolhido.longitude}</Text>
+            <Text style={styles.pokemonPeso}>Oxigênio dissolvido: {rioEscolhido.oxigeniodissolvido}</Text>
+            <Text style={styles.pokemonPeso}>Potencial hidrogênico: {rioEscolhido.potencialhidrogenico}</Text>
+            <Text style={styles.pokemonPeso}>Salinidade: {rioEscolhido.salinidade}</Text>
+            <Text style={styles.pokemonPeso}>temperatura: {rioEscolhido.temperatura}</Text>
+            <Text style={styles.pokemonPeso}>turbidez: {rioEscolhido.turbidez}</Text>
           </View>
         )}
 
