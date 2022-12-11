@@ -3,7 +3,7 @@ import { Alert, View, ScrollView, Text, Image, Button, StyleSheet, } from 'react
 
 
 
-export default function Sobre(){
+export default function Consultar(){
     const [ rioEscolhido, setRioEscolhido ] = useState(null);
     const nameRio = "teste8";
   
