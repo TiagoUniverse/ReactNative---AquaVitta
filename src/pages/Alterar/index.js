@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, View, ScrollView, Text, Image, Button, StyleSheet, } from 'react-native';
+import { Alert, View, ScrollView, Text, Image, Button, StyleSheet, TextInput } from 'react-native';
 
 
 
@@ -40,16 +40,26 @@ export default function Alterar(){
             </View>
             {rioEscolhido != null && (
             <View style={styles.pokemonBox}>
-              <Text style={styles.pokemonPeso}>Nome do rio: {rioEscolhido.nomeRio}</Text>
-              <Text style={styles.pokemonPeso}>Endereço: {rioEscolhido.endereco}</Text>
-              <Text style={styles.pokemonPeso}>condutividade: {rioEscolhido.condutividade}</Text>
-              <Text style={styles.pokemonPeso}>Latitude: {rioEscolhido.latitude}</Text>
-              <Text style={styles.pokemonPeso}>Longitude: {rioEscolhido.longitude}</Text>
-              <Text style={styles.pokemonPeso}>Oxigênio dissolvido: {rioEscolhido.oxigeniodissolvido}</Text>
-              <Text style={styles.pokemonPeso}>Potencial hidrogênico: {rioEscolhido.potencialhidrogenico}</Text>
-              <Text style={styles.pokemonPeso}>Salinidade: {rioEscolhido.salinidade}</Text>
-              <Text style={styles.pokemonPeso}>temperatura: {rioEscolhido.temperatura}</Text>
-              <Text style={styles.pokemonPeso}>turbidez: {rioEscolhido.turbidez}</Text>
+              <Text style={styles.pokemonPeso}>Nome do rio: </Text>
+              <TextInput value={rioEscolhido.nomeRio} />
+              <Text style={styles.pokemonPeso}>Endereço: </Text>
+              <TextInput value={rioEscolhido.endereco} />
+              <Text style={styles.pokemonPeso}>condutividade: </Text>
+              <TextInput value={rioEscolhido.condutividade} />
+              <Text style={styles.pokemonPeso}>Latitude: </Text>
+              <TextInput value={rioEscolhido.latitude} />
+              <Text style={styles.pokemonPeso}>Longitude: </Text>
+              <TextInput value={rioEscolhido.longitude} />
+              <Text style={styles.pokemonPeso}>Oxigênio dissolvido: </Text>
+              <TextInput value={rioEscolhido.oxigeniodissolvido} />
+              <Text style={styles.pokemonPeso}>Potencial hidrogênico: </Text>
+              <TextInput value={rioEscolhido.potencialhidrogenico} />
+              <Text style={styles.pokemonPeso}>Salinidade: </Text>
+              <TextInput value={rioEscolhido.salinidade} />
+              <Text style={styles.pokemonPeso}>temperatura: </Text>
+              <TextInput value={rioEscolhido.temperatura} />
+              <Text style={styles.pokemonPeso}>turbidez: </Text>
+              <TextInput value={rioEscolhido.turbidez} />
             </View>
           )}
   
