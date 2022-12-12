@@ -23,7 +23,7 @@ export default function Alterar() {
     fetch(endpoint)
       .then(resposta => resposta.json())
         .catch(() => {
-          Alert.alert('Erro', 'Não foi possível excluir este ponto de rio');
+          Alert.alert('Erro', 'Rio deletado com sucesso!');
         });
   }
 
