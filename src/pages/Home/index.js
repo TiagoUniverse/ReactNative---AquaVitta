@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 
@@ -7,6 +7,14 @@ export default function Home({ navigation }) {
     return (
         <View>
             <View style={styles.container}>
+                <Image
+                style={{
+                    width: '100%',
+                    height: '50%',
+                    alignItems: 'center',
+                }}
+                source={require('../../../assets/logo.png')}
+                />
                 <Text style={styles.menu}> Menu </Text>
                 <View style={styles.buttonOutside}>
                     <Button 

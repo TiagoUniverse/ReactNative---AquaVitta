@@ -19,7 +19,7 @@ export default function App(){
         headerTintColor: 'white',
         headerStyle: { backgroundColor: '#0000CD' },
       }} >
-        <Stack.Screen name="AquaVitta" component={Home} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Criar" component={Criar}  />
         <Stack.Screen name="Consultar" component={Consultar} />
         <Stack.Screen name="Alterar" component={Alterar} />

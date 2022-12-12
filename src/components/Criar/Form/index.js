@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View, Text } from "react-native"
+import { View, Text, ScrollView } from "react-native"
 import { Button, TextInput, StyleSheet } from "react-native";
 import ResultImc from "./ResultImc";
 
@@ -48,7 +48,7 @@ export default function Form() {
     }
 
     return (
-        <View>
+        <ScrollView>
             <Text style={styles.TextTitle}>Cadastrar um novo Rio</Text>
             <View style={styles.container}>
                 <Text style={styles.Textt}>Nome do rio:</Text>
@@ -139,7 +139,7 @@ export default function Form() {
 
             <ResultImc messageResultImc={message} ResultImc={imc} />
 
-        </View>
+        </ScrollView>
     );
 }
 const styles = StyleSheet.create({

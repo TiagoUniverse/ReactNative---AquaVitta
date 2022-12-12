@@ -28,7 +28,7 @@ export default function Consultar(){
             setRioEscolhido(rio);
           })
           .catch(() => {
-            Alert.alert('Erro', 'Não foi possível carregar os dados do ponto de rio');
+            Alert.alert('Sucesso', 'Rio deletado com sucesso!');
           });
     }
   
@@ -39,17 +39,17 @@ export default function Consultar(){
             <Text style={styles.topoTitulo}>RIO</Text>
             </View>
             {rioEscolhido != null && (
-            <View style={styles.pokemonBox}>
-              <Text style={styles.pokemonPeso}>Nome do rio: {rioEscolhido.nomeRio}</Text>
-              <Text style={styles.pokemonPeso}>Endereço: {rioEscolhido.endereco}</Text>
-              <Text style={styles.pokemonPeso}>condutividade: {rioEscolhido.condutividade}</Text>
-              <Text style={styles.pokemonPeso}>Latitude: {rioEscolhido.latitude}</Text>
-              <Text style={styles.pokemonPeso}>Longitude: {rioEscolhido.longitude}</Text>
-              <Text style={styles.pokemonPeso}>Oxigênio dissolvido: {rioEscolhido.oxigeniodissolvido}</Text>
-              <Text style={styles.pokemonPeso}>Potencial hidrogênico: {rioEscolhido.potencialhidrogenico}</Text>
-              <Text style={styles.pokemonPeso}>Salinidade: {rioEscolhido.salinidade}</Text>
-              <Text style={styles.pokemonPeso}>temperatura: {rioEscolhido.temperatura}</Text>
-              <Text style={styles.pokemonPeso}>turbidez: {rioEscolhido.turbidez}</Text>
+            <View style={styles.Box}>
+              <Text style={styles.linha}>Nome do rio: {rioEscolhido.nomeRio}</Text>
+              <Text style={styles.linha}>Endereço: {rioEscolhido.endereco}</Text>
+              <Text style={styles.linha}>condutividade: {rioEscolhido.condutividade}</Text>
+              <Text style={styles.linha}>Latitude: {rioEscolhido.latitude}</Text>
+              <Text style={styles.linha}>Longitude: {rioEscolhido.longitude}</Text>
+              <Text style={styles.linha}>Oxigênio dissolvido: {rioEscolhido.oxigeniodissolvido}</Text>
+              <Text style={styles.linha}>Potencial hidrogênico: {rioEscolhido.potencialhidrogenico}</Text>
+              <Text style={styles.linha}>Salinidade: {rioEscolhido.salinidade}</Text>
+              <Text style={styles.linha}>temperatura: {rioEscolhido.temperatura}</Text>
+              <Text style={styles.linha}>turbidez: {rioEscolhido.turbidez}</Text>
             </View>
           )}
   
@@ -85,9 +85,9 @@ export default function Consultar(){
     cardContainer: { borderWidth: 1, borderColor: '#d5d5d5', borderRadius: 4, marginBottom: 10, marginHorizontal: 20, padding: 10, },
     cardTitle: { fontSize: 22, marginBottom: 20, textAlign: 'center', color: '#656565' },
   
-    pokemonBox: { alignItems: 'center' },
-    pokemonNome: { fontSize: 22 },
-    pokemonPeso: { fontSize: 18 },
-    pokemonImg:{ width: 150, height: 150,}
+    Box: { alignItems: 'center' },
+     
+    linha: { fontSize: 18 }
+     
   });
 
