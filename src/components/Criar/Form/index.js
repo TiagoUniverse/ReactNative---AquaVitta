@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { View, Text } from "react-native"
-import { Button, TextInput } from "react-native-web";
+import { View, Text, Button, TextInput } from "react-native"
 import  ResultText from "./ResultText";
 
 

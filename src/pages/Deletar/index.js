@@ -17,7 +17,7 @@ export default function Alterar() {
 
 
   const deletarRio = () => {
-    const endpoint = `https://aquavitta1.pythonanywhere.com/nalinha/deletar/${nomeRio}/${endereco}/${latitude}/${longitude}/${potencialhidrogenico}/${oxigeniodissolvido}/${temperatura}/${condutividade}/${salinidade}/${turbidez}`;
+    const endpoint = `https://aquavitta1.pythonanywhere.com/nalinha/delete/${nomeRio}/${endereco}/${latitude}/${longitude}/${potencialhidrogenico}/${oxigeniodissolvido}/${temperatura}/${condutividade}/${salinidade}/${turbidez}`;
     console.log(endpoint)
     console.log(nomeRio)
     fetch(endpoint)
@@ -84,7 +84,7 @@ export default function Alterar() {
 
           {rioEscolhido != null && (
             <><><Text>Confira o ponto de rio que vai excluir e confirme no botão abaixo</Text></>
-            <Button  title="Excluir" onPress={() => atualizarRio()}></Button></>
+            <Button  title="Excluir" onPress={() => deletarRio()}></Button></>
           )}
 
         </View>
