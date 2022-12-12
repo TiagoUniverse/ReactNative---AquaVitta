@@ -16,46 +16,21 @@ export default function Form() {
     const [condutividade, setCondutividade] = useState(null)
     const [salinidade, setSalinidade] = useState(null)
     const [turbidez, setTurbidez] = useState(null)
-    const [height, setHeight] = useState(null)
-    const [weight, setWeight] = useState(null)
     const [message, setmessage] = useState("Preencha as informações do ponto de rio")
     const [imc, setImc] = useState(null)
     const [textButton, setTextButton] = useState("Cadastrar")
 
 
-
-    
-    let cadastrarRio = async (e) => {
-        e.preventDefault();
-        try {
-          let res = await fetch("https://aquavitta1.pythonanywhere.com/envio", {
-            method: "POST",
-            body: JSON.stringify({
-              update: '',
-              rio: nomeRio,
-              endereco: endereco,
-              latitude: latitude,
-              longitude: longitude,
-              potencialhidrogenico: potencialhidrogenico,
-              oxigeniodissolvido: oxigeniodissolvido,
-              temperatura: temperatura,
-              condutividade: condutividade,
-              salinidade: salinidade,
-              turbidez: turbidez
-            }),
-          });
-          let resJson = await res.json();
-          if (res.status === 200) {
-            setNomeRio("");
-            setEndereco("");
-            setMessage("Ponto de rio criado com Sucesso");
-          } else {
-            setMessage("Erro ao cadastrar o ponto de rio");
-          }
-        } catch (err) {
-          console.log(err);
-        }
-      };
+    const cadastrarRio = () => {
+        const endpoint = `https://aquavitta1.pythonanywhere.com/nalinha/0/${nomeRio}/${endereco}/${latitude}/${longitude}/${potencialhidrogenico}/${oxigeniodissolvido}/${temperatura}/${condutividade}/${salinidade}/${turbidez}`;
+        console.log(endpoint)
+        console.log(nomeRio)
+        fetch(endpoint)
+          .then(resposta => resposta.json())
+            .catch(() => {
+              Alert.alert('Erro', 'Não foi possível fazer o cadastro');
+            });
+      }
 
     function validationImc() {
         if (nomeRio != null && endereco != null && latitude != null && longitude != null) {
@@ -64,12 +39,12 @@ export default function Form() {
             setEndereco(null)
             setLatitude(null)
             setLongitude(null)
-            setTextButton("Cadastrar novamente")
+            setTextButton("Cadastro finalizado")
             return
         }
         setImc(null)
         setTextButton("Cadastrar")
-        setmessage("preencha o peso e altura")
+        setmessage("Preencha no mínimo as informações: Nome do ponto do rio, endereço, latitude e longitude")
     }
 
     return (
@@ -78,81 +53,81 @@ export default function Form() {
                 <Text>Nome do rio:</Text>
                 <TextInput
                     onChangeText={setNomeRio}
-                    value={height}
-                    placeholder="Ex. 1.70"
-                    KeyboardType="numeric"
+                    value={nomeRio}
+                    // placeholder="Ex. 1.70"
+                    KeyboardType="text"
                 />
 
                 <Text>Endereço:</Text>
                 <TextInput
                     onChangeText={setEndereco}
-                    value={weight}
-                    placeholder="Ex. 60.30"
-                    KeyboardType="numeric"
+                    value={endereco}
+                    ////placeholder="Ex. 60.30"
+                    KeyboardType="text"
                 />
 
                 <Text>Latitude:</Text>
                 <TextInput
                     onChangeText={setLatitude}
-                    value={weight}
-                    placeholder="Ex. 60.30"
-                    KeyboardType="numeric"
+                    value={latitude}
+                    //placeholder="Ex. 60.30"
+                    KeyboardType="text"
                 />
 
                 <Text>Longitude:</Text>
                 <TextInput
                     onChangeText={setLongitude}
-                    value={weight}
-                    placeholder="Ex. 60.30"
-                    KeyboardType="numeric"
+                    value={longitude}
+                    //placeholder="Ex. 60.30"
+                    KeyboardType="text"
                 />
 
                 <Text>Potencial hidrogênico:</Text>
                 <TextInput
                     onChangeText={setPotencialHidrogenico}
-                    value={weight}
-                    placeholder="Ex. 60.30"
-                    KeyboardType="numeric"
+                    value={potencialhidrogenico}
+                    //placeholder="Ex. 60.30"
+                    KeyboardType="text"
                 />
 
                 <Text>Oxigênio dissolvido:</Text>
                 <TextInput
                     onChangeText={setOxigenioDissolvido}
-                    value={weight}
-                    placeholder="Ex. 60.30"
-                    KeyboardType="numeric"
+                    value={oxigeniodissolvido}
+                    //placeholder="Ex. 60.30"
+                    KeyboardType="text"
                 />
 
                 <Text>Temperatura:</Text>
                 <TextInput
                     onChangeText={setTemperatura}
-                    value={weight}
-                    placeholder="Ex. 60.30"
-                    KeyboardType="numeric"
+                    value={temperatura}
+                    //placeholder="Ex. 60.30"
+                    KeyboardType="text"
                 />
 
                 <Text>condutividade:</Text>
                 <TextInput
                     onChangeText={setCondutividade}
-                    value={weight}
-                    placeholder="Ex. 60.30"
-                    KeyboardType="numeric"
+                    value={condutividade}
+                    //placeholder="Ex. 60.30"
+                    KeyboardType="text"
                 />
 
                 <Text>Salinidade:</Text>
                 <TextInput
                     onChangeText={setSalinidade}
-                    value={weight}
-                    placeholder="Ex. 60.30"
-                    KeyboardType="numeric"
+                    value={salinidade}
+                    //placeholder="Ex. 60.30"
+                    KeyboardType="text"
                 />
 
                 <Text>Turbidez:</Text>
                 <TextInput
                     onChangeText={setTurbidez}
-                    value={weight}
-                    placeholder="Ex. 60.30"
-                    KeyboardType="numeric"
+                    value={turbidez}
+                    //placeholder="Ex. 60.30"
+                    KeyboardType="text"
                 />
 
                 <Button

@@ -9,7 +9,7 @@ export default function Consultar(){
   
     const getRio = (nameRio) => {
       const endpoint = `https://aquavitta1.pythonanywhere.com/leitura/${nameRio}`;
-  
+      // console.log(JSON.stringify(endpoint))
       fetch(endpoint)
         .then(resposta => resposta.json())
           .then( json => {
@@ -28,7 +28,7 @@ export default function Consultar(){
             setRioEscolhido(rio);
           })
           .catch(() => {
-            Alert.alert('Erro', 'Não foi possível carregar os dados do Pokémon');
+            Alert.alert('Erro', 'Não foi possível carregar os dados do ponto de rio');
           });
     }
   
