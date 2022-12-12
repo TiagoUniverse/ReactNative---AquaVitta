@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Alert, View, ScrollView, Text, Image, Button, StyleSheet, } from 'react-native';
+import { Alert, View, ScrollView, Text, Image, Button, StyleSheet, TextInput } from 'react-native';
 
 
 
 export default function Consultar(){
     const [ rioEscolhido, setRioEscolhido ] = useState(null);
-    const nameRio = "teste8";
+    const [ nomeRio, setNomeRio] = useState(null)
   
-    const getRio = (nameRio) => {
-      const endpoint = `https://aquavitta1.pythonanywhere.com/leitura/${nameRio}`;
+    const getRio = ( nomeRio) => {
+      const endpoint = `https://aquavitta1.pythonanywhere.com/leitura/${ nomeRio}`;
       // console.log(JSON.stringify(endpoint))
       fetch(endpoint)
         .then(resposta => resposta.json())
@@ -54,11 +54,19 @@ export default function Consultar(){
           )}
   
   
-            
+
             
             <View style={styles.cardContainer}>
-              <Text> </Text>
-              <Button title="Puxar o rio" onPress={()=>getRio(nameRio)}/>
+              
+              {rioEscolhido == null &&(
+                <><Text>Digite o nome do rio no campo abaixo</Text><TextInput
+                onChangeText={setNomeRio}
+                value={ nomeRio}
+                KeyboardType="text" /></>
+              )}
+
+
+              <Button title="Puxar o rio" onPress={()=>getRio( nomeRio)}/>
             </View>
             
   
