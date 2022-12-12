@@ -13,10 +13,14 @@ const Stack = createNativeStackNavigator();
 
 export default function App(){
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Criar" component={Criar} />
+    <NavigationContainer >
+      <Stack.Navigator initialRouteName='Home' screenOptions={{
+        headerMode: 'screen',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: '#0000CD' },
+      }} >
+        <Stack.Screen name="AquaVitta" component={Home} />
+        <Stack.Screen name="Criar" component={Criar}  />
         <Stack.Screen name="Consultar" component={Consultar} />
         <Stack.Screen name="Alterar" component={Alterar} />
         <Stack.Screen name="Deletar" component={Deletar} />
@@ -24,3 +28,5 @@ export default function App(){
     </NavigationContainer>
   );
 }
+
+

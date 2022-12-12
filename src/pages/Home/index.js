@@ -1,31 +1,68 @@
 import * as React from 'react';
 import { View, Text, Button } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 
 export default function Home({ navigation }) {
     return (
         <View>
-            <Text> Aqua Vitta</Text>
+            <View style={styles.container}>
+                <Text style={styles.menu}> Menu </Text>
+                <View style={styles.buttonOutside}>
+                    <Button 
+                     title="Criar"
+                     onPress={() => navigation.navigate('Criar')}
+                    />
+                </View>
+            
+                <View style={styles.buttonOutside}>
+                    <Button
+                     title="Consultar"
+                     onPress={() => navigation.navigate('Consultar')}
+                    />
+                </View>
 
-            <Button
-                title="Criar"
-                onPress={() => navigation.navigate('Criar')}
-            />
+                <View style={styles.buttonOutside}>
+                    <Button
+                     title="Alterar"
+                     onPress={() => navigation.navigate('Alterar')}
+                    />
+                </View>
 
-            <Button
-                title="Consultar"
-                onPress={() => navigation.navigate('Consultar')}
-            />
+                <View style={styles.buttonOutside}>
+                    <Button
+                     title="Deletar"
+                     onPress={() => navigation.navigate('Deletar')}
+                     />
+                </View>
 
-            <Button
-                title="Alterar"
-                onPress={() => navigation.navigate('Alterar')}
-            />
-
-            <Button
-                title="Deletar"
-                onPress={() => navigation.navigate('Deletar')}
-            />
+            </View>
         </View>
     );
 }
+const styles = StyleSheet.create({
+    container: {
+      marginTop: 40,
+      marginLeft: 50,
+      marginRight: 50,
+      borderWidth: 1, 
+      borderColor: '#d5d5d5', 
+      borderRadius: 4, 
+      marginBottom: 10, 
+      marginHorizontal: 20, 
+      padding: 10,
+      backgroundColor: '#fafafa'
+    },
+    buttonOutside:{
+        marginBottom: 12,
+    },
+    menu:{ 
+        fontSize: 22, 
+        marginBottom: 20, 
+        textAlign: 'center',
+    },
+    button:{
+        fontSize: 22
+    }
+        })
+

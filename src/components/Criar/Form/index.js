@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import { View, Text, Button, TextInput } from "react-native"
-import  ResultText from "./ResultText";
+import { View, Text } from "react-native"
+import { Button, TextInput, StyleSheet } from "react-native";
+import ResultImc from "./ResultImc";
 
 
 export default function Form() {
@@ -16,6 +17,7 @@ export default function Form() {
     const [salinidade, setSalinidade] = useState(null)
     const [turbidez, setTurbidez] = useState(null)
     const [message, setmessage] = useState("Preencha as informações do ponto de rio")
+    const [imc, setImc] = useState(null)
     const [textButton, setTextButton] = useState("Cadastrar")
 
 
@@ -30,7 +32,7 @@ export default function Form() {
             });
       }
 
-    function validation() {
+    function validationImc() {
         if (nomeRio != null && endereco != null && latitude != null && longitude != null) {
             cadastrarRio()
             setNomeRio(null)
@@ -40,87 +42,89 @@ export default function Form() {
             setTextButton("Cadastro finalizado")
             return
         }
+        setImc(null)
         setTextButton("Cadastrar")
         setmessage("Preencha no mínimo as informações: Nome do ponto do rio, endereço, latitude e longitude")
     }
 
     return (
         <View>
-            <View>
-                <Text>Nome do rio:</Text>
-                <TextInput
+            <Text style={styles.TextTitle}>Cadastrar um novo Rio</Text>
+            <View style={styles.container}>
+                <Text style={styles.Textt}>Nome do rio:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setNomeRio}
                     value={nomeRio}
                     // placeholder="Ex. 1.70"
                     KeyboardType="text"
                 />
 
-                <Text>Endereço:</Text>
-                <TextInput
+                <Text style={styles.Textt}>Endereço:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setEndereco}
                     value={endereco}
                     ////placeholder="Ex. 60.30"
                     KeyboardType="text"
                 />
 
-                <Text>Latitude:</Text>
-                <TextInput
+                <Text style={styles.Textt}>Latitude:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setLatitude}
                     value={latitude}
                     //placeholder="Ex. 60.30"
                     KeyboardType="text"
                 />
 
-                <Text>Longitude:</Text>
-                <TextInput
+                <Text style={styles.Textt}>Longitude:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setLongitude}
                     value={longitude}
                     //placeholder="Ex. 60.30"
                     KeyboardType="text"
                 />
 
-                <Text>Potencial hidrogênico:</Text>
-                <TextInput
+                <Text style={styles.Textt}>Potencial hidrogênico:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setPotencialHidrogenico}
                     value={potencialhidrogenico}
                     //placeholder="Ex. 60.30"
                     KeyboardType="text"
                 />
 
-                <Text>Oxigênio dissolvido:</Text>
-                <TextInput
+                <Text style={styles.Textt}>Oxigênio dissolvido:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setOxigenioDissolvido}
                     value={oxigeniodissolvido}
                     //placeholder="Ex. 60.30"
                     KeyboardType="text"
                 />
 
-                <Text>Temperatura:</Text>
-                <TextInput
+                <Text style={styles.Textt}>Temperatura:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setTemperatura}
                     value={temperatura}
                     //placeholder="Ex. 60.30"
                     KeyboardType="text"
                 />
 
-                <Text>condutividade:</Text>
-                <TextInput
+                <Text style={styles.Textt}>condutividade:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setCondutividade}
                     value={condutividade}
                     //placeholder="Ex. 60.30"
                     KeyboardType="text"
                 />
 
-                <Text>Salinidade:</Text>
-                <TextInput
+                <Text style={styles.Textt}>Salinidade:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setSalinidade}
                     value={salinidade}
                     //placeholder="Ex. 60.30"
                     KeyboardType="text"
                 />
 
-                <Text>Turbidez:</Text>
-                <TextInput
+                <Text style={styles.Textt}>Turbidez:</Text>
+                <TextInput style={styles.TextInputt}
                     onChangeText={setTurbidez}
                     value={turbidez}
                     //placeholder="Ex. 60.30"
@@ -129,12 +133,42 @@ export default function Form() {
 
                 <Button
                     title={textButton}
-                    onPress={() => validation()}
+                    onPress={() => validationImc()}
                 />
             </View>
 
-            < ResultText messageResult={message} />
+            <ResultImc messageResultImc={message} ResultImc={imc} />
 
         </View>
     );
 }
+const styles = StyleSheet.create({
+    container: {
+      marginTop: 20,
+      marginLeft: 30,
+      marginRight: 30,
+      borderWidth: 1, 
+      borderColor: '#d5d5d5', 
+      borderRadius: 4, 
+      marginBottom: 10, 
+      marginHorizontal: 20, 
+      padding: 10,
+      backgroundColor: '#fafafa'
+    },
+    Textt:{
+        fontSize: 15,
+        color: '#363636'
+    },
+    TextInputt:{
+        backgroundColor: '#DCDCDC',
+        borderRadius: 4,
+        marginBottom: 15,
+    },
+    TextTitle:{
+        fontSize: 22, marginTop: 25, textAlign: 'center', color: 'black',
+        backgroundColor: 'white' ,
+        marginLeft: 110,
+        marginRight: 110,
+        borderRadius: 5
+    }
+})
