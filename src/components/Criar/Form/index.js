@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { View, Text } from "react-native"
 import { Button, TextInput } from "react-native-web";
-import ResultImc from "./ResultImc";
+import  ResultText from "./ResultText";
 
 
 export default function Form() {
@@ -17,7 +17,6 @@ export default function Form() {
     const [salinidade, setSalinidade] = useState(null)
     const [turbidez, setTurbidez] = useState(null)
     const [message, setmessage] = useState("Preencha as informações do ponto de rio")
-    const [imc, setImc] = useState(null)
     const [textButton, setTextButton] = useState("Cadastrar")
 
 
@@ -32,7 +31,7 @@ export default function Form() {
             });
       }
 
-    function validationImc() {
+    function validation() {
         if (nomeRio != null && endereco != null && latitude != null && longitude != null) {
             cadastrarRio()
             setNomeRio(null)
@@ -42,7 +41,6 @@ export default function Form() {
             setTextButton("Cadastro finalizado")
             return
         }
-        setImc(null)
         setTextButton("Cadastrar")
         setmessage("Preencha no mínimo as informações: Nome do ponto do rio, endereço, latitude e longitude")
     }
@@ -132,11 +130,11 @@ export default function Form() {
 
                 <Button
                     title={textButton}
-                    onPress={() => validationImc()}
+                    onPress={() => validation()}
                 />
             </View>
 
-            <ResultImc messageResultImc={message} ResultImc={imc} />
+            < ResultText messageResult={message} />
 
         </View>
     );
