@@ -76,7 +76,7 @@ export default function Alterar() {
 
         <View style={styles.cardContainer}>
           {rioEscolhido == null && (
-            <><><Text>Digite o nome do rio no campo abaixo</Text></><TextInput
+            <><><Text>Digite o nome do rio no campo abaixo:</Text></><TextInput style={styles.TextInputt}
               onChangeText={setNomeRio}
               value={nomeRio}
               KeyboardType="text" /><Button title="Selecionar um rio para exclusão" onPress={() => getRio(nomeRio)} /></>
@@ -97,7 +97,7 @@ export default function Alterar() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
 
-  topo: { height: 80, padding: 20, paddingTop: 40, marginBottom: 20, backgroundColor: '#e73e33' },
+  topo: { height: 80, padding: 20, paddingTop: 40, marginBottom: 20, backgroundColor: '#00008B' },
   topoTitulo: { fontSize: 22, marginBottom: -10, color: '#fff', textAlign: 'center' },
 
   cardContainer: { borderWidth: 1, borderColor: '#d5d5d5', borderRadius: 4, marginBottom: 10, marginHorizontal: 20, padding: 10 },
@@ -105,5 +105,11 @@ const styles = StyleSheet.create({
 
   Box: { alignItems: 'center' },
   linha: { fontSize: 18 },
+  TextInputt:{
+    backgroundColor: '#DCDCDC',
+    borderRadius: 4,
+    marginBottom: 15,
+    marginTop: 5,
+},
 });
 

@@ -59,7 +59,7 @@ export default function Consultar(){
             <View style={styles.cardContainer}>
               
               {rioEscolhido == null &&(
-                <><Text>Digite o nome do rio no campo abaixo</Text><TextInput
+                <><Text>Digite o nome do rio no campo abaixo:</Text><TextInput style={styles.TextInputt}
                 onChangeText={setNomeRio}
                 value={ nomeRio}
                 KeyboardType="text" /></>
@@ -87,7 +87,14 @@ export default function Consultar(){
   
     Box: { alignItems: 'center' },
      
-    linha: { fontSize: 18 }
+    linha: { fontSize: 18 },
+    
+    TextInputt:{
+      backgroundColor: '#DCDCDC',
+      borderRadius: 4,
+      marginBottom: 15,
+      marginTop: 5,
+  },
      
   });
 
