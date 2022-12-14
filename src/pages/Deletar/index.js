@@ -23,7 +23,7 @@ export default function Alterar() {
     fetch(endpoint)
       .then(resposta => resposta.json())
         .catch(() => {
-          Alert.alert('Erro', 'Rio deletado com sucesso!');
+          Alert.alert('Sucesso', 'Rio deletado com sucesso!');
         });
   }
 
@@ -56,7 +56,7 @@ export default function Alterar() {
     <View style={styles.container}>
       <ScrollView>
         <View style={styles.topo}>
-          <Text style={styles.topoTitulo}>RIO</Text>
+          <Text style={styles.topoTitulo}>AquaVitta</Text>
         </View>
         {rioEscolhido != null && (
           <View style={styles.Box}>
@@ -110,6 +110,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginBottom: 15,
     marginTop: 5,
+    paddingLeft: 10,
+    color: '#4F4F4F'
 },
 });
 

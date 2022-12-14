@@ -49,7 +49,9 @@ export default function Form() {
 
     return (
         <ScrollView>
-            <Text style={styles.TextTitle}>Cadastrar um novo Rio</Text>
+            <View style={styles.topo}>
+                <Text style={styles.topoTitulo}>AquaVitta</Text>
+            </View>
             <View style={styles.container}>
                 <Text style={styles.Textt}>Nome do rio:</Text>
                 <TextInput style={styles.TextInputt}
@@ -163,12 +165,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#DCDCDC',
         borderRadius: 4,
         marginBottom: 15,
+        color: '#4F4F4F',
+        paddingLeft: 10
     },
     TextTitle:{
         fontSize: 22, marginTop: 25, textAlign: 'center', color: 'black',
         backgroundColor: 'white' ,
-        marginLeft: 110,
-        marginRight: 110,
+        marginLeft: 80,
+        marginRight: 80,
         borderRadius: 5
-    }
+    },
+    topo: { height: 80, padding: 20, paddingTop: 40, marginBottom: 20, backgroundColor: '#00008B' },
+    topoTitulo: { fontSize: 22, marginBottom: -10, color: '#fff', textAlign: 'center' }
 })

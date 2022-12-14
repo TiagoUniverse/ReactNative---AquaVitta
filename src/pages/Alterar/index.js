@@ -48,7 +48,7 @@ export default function Alterar() {
         setRioEscolhido(rio);
       })
       .catch(() => {
-        Alert.alert('Erro', 'Não foi possível alterar este ponto de rio');
+        Alert.alert('Erro', 'Não foi possível alterar este rio');
       });
   }
 
@@ -56,75 +56,75 @@ export default function Alterar() {
     <View style={styles.container}>
       <ScrollView>
         <View style={styles.topo}>
-          <Text style={styles.topoTitulo}>RIO</Text>
+          <Text style={styles.topoTitulo}>AquaVitta</Text>
         </View>
         {rioEscolhido != null && (
           <View style={styles.Box}>
             <Text style={styles.linha}>Nome do rio: {rioEscolhido.nomeRio} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setNomeRio}
                     value={ nomeRio}
                     KeyboardType="text"
                 />
 
             <Text style={styles.linha}>Endereço: {rioEscolhido.endereco} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setEndereco}
                     value={ endereco}
                     KeyboardType="text"
                 />
 
             <Text style={styles.linha}>condutividade: {rioEscolhido.condutividade} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setCondutividade}
                     value={ condutividade}
                     KeyboardType="text"
                 />
 
             <Text style={styles.linha}>Latitude: {rioEscolhido.latitude} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setLatitude}
                     value={ latitude}
                     KeyboardType="text"
                 />
 
             <Text style={styles.linha}>Longitude: {rioEscolhido.longitude} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setLongitude}
                     value={ longitude}
                     KeyboardType="text"
                 />
 
             <Text style={styles.linha}>Oxigênio dissolvido: {rioEscolhido.oxigeniodissolvido} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setOxigenioDissolvido}
                     value={ oxigeniodissolvido}
                     KeyboardType="text"
                 />
 
             <Text style={styles.linha}>Potencial hidrogênico: {rioEscolhido.potencialhidrogenico} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setPotencialHidrogenico}
                     value={ potencialhidrogenico}
                     KeyboardType="text"
                 />
                 
             <Text style={styles.linha}>Salinidade: {rioEscolhido.salinidade} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setSalinidade}
                     value={ salinidade}
                     KeyboardType="text"
                 />
 
             <Text style={styles.linha}>temperatura: {rioEscolhido.temperatura} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setTemperatura}
                     value={ temperatura}
                     KeyboardType="text"
                 />
 
             <Text style={styles.linha}>turbidez: {rioEscolhido.turbidez} </Text>
-            <TextInput style={styles.TextInputt}
+            <TextInput style={styles.TextInputtt}
                     onChangeText={setTurbidez}
                     value={ turbidez}
                     KeyboardType="text"
@@ -136,7 +136,7 @@ export default function Alterar() {
 
         <View style={styles.cardContainer}>
           {rioEscolhido == null && (
-            <><><Text>Digite o nome do rio no campo abaixo:</Text></><TextInput
+            <><><Text>Digite o nome do rio no campo abaixo:</Text></><TextInput style={styles.TextInputt}
               onChangeText={setNomeRio}
               value={nomeRio}
               KeyboardType="text" /><Button title="Puxar o rio" onPress={() => getRio(nomeRio)} /></>
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
   cardTitle: { fontSize: 22, marginBottom: 20, textAlign: 'center', color: '#656565' },
 
   Box: { alignItems: 'center' },
-  linha: { fontSize: 18 },
+  linha: { fontSize: 18, fontStyle: 'italic' },
   
   TextInputt:{
     marginTop: 5,
@@ -174,6 +174,18 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginBottom: 15,
     marginTop: 5,
+    color: '#4F4F4F',
+    paddingLeft: 10
+},
+TextInputtt:{
+  marginTop: 5,
+  backgroundColor: '#DCDCDC',
+  borderRadius: 4,
+  marginBottom: 15,
+  marginTop: 5,
+  paddingLeft: 100,
+  paddingRight: 100,
+  color: '#4F4F4F'
 },
 });
 

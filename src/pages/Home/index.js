@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     },
     buttonOutside:{
         marginBottom: 12,
+        
     },
     menu:{ 
         fontSize: 22, 
@@ -70,7 +71,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     button:{
-        fontSize: 22
+        fontSize: 22,
+        borderRadius: 10
     }
         })
 

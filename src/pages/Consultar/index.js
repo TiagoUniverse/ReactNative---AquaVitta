@@ -28,7 +28,7 @@ export default function Consultar(){
             setRioEscolhido(rio);
           })
           .catch(() => {
-            Alert.alert('Sucesso', 'Rio deletado com sucesso!');
+            Alert.alert('Sucesso', 'Rio consultado!');
           });
     }
   
@@ -36,20 +36,20 @@ export default function Consultar(){
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.topo}>
-            <Text style={styles.topoTitulo}>RIO</Text>
+            <Text style={styles.topoTitulo}>AquaVitta</Text>
             </View>
             {rioEscolhido != null && (
-            <View style={styles.Box}>
+            <View style={styles.cardContainer}>
               <Text style={styles.linha}>Nome do rio: {rioEscolhido.nomeRio}</Text>
               <Text style={styles.linha}>Endereço: {rioEscolhido.endereco}</Text>
-              <Text style={styles.linha}>condutividade: {rioEscolhido.condutividade}</Text>
+              <Text style={styles.linha}>condutividade: {rioEscolhido.condutividade} S/m</Text>
               <Text style={styles.linha}>Latitude: {rioEscolhido.latitude}</Text>
               <Text style={styles.linha}>Longitude: {rioEscolhido.longitude}</Text>
-              <Text style={styles.linha}>Oxigênio dissolvido: {rioEscolhido.oxigeniodissolvido}</Text>
-              <Text style={styles.linha}>Potencial hidrogênico: {rioEscolhido.potencialhidrogenico}</Text>
-              <Text style={styles.linha}>Salinidade: {rioEscolhido.salinidade}</Text>
-              <Text style={styles.linha}>temperatura: {rioEscolhido.temperatura}</Text>
-              <Text style={styles.linha}>turbidez: {rioEscolhido.turbidez}</Text>
+              <Text style={styles.linha}>Oxigênio dissolvido: {rioEscolhido.oxigeniodissolvido} mg/L</Text>
+              <Text style={styles.linha}>Potencial hidrogênico: {rioEscolhido.potencialhidrogenico} pH</Text>
+              <Text style={styles.linha}>Salinidade: {rioEscolhido.salinidade} ppm</Text>
+              <Text style={styles.linha}>temperatura: {rioEscolhido.temperatura} °C</Text>
+              <Text style={styles.linha}>turbidez: {rioEscolhido.turbidez} NTU</Text>
             </View>
           )}
   
@@ -66,7 +66,7 @@ export default function Consultar(){
               )}
 
 
-              <Button title="Puxar o rio" onPress={()=>getRio( nomeRio)}/>
+              <Button title="Consultar" onPress={()=>getRio( nomeRio)}/>
             </View>
             
   
@@ -77,7 +77,7 @@ export default function Consultar(){
   }
   
   const styles = StyleSheet.create({
-    container: { flex: 1, backgroundColor: '#fff' },
+    container: { flex: 1, backgroundColor: '#fafafa' },
   
     topo: { height: 80, padding: 20, paddingTop: 40, marginBottom: 20, backgroundColor: '#00008B' },
     topoTitulo: { fontSize: 22, marginBottom: -10, color: '#fff', textAlign: 'center'},
@@ -87,14 +87,15 @@ export default function Consultar(){
   
     Box: { alignItems: 'center' },
      
-    linha: { fontSize: 18 },
+    linha: { fontSize: 18, marginBottom: 10, borderRadius: 4, paddingLeft: 10, paddingBottom: 2, paddingTop: 2 },
     
     TextInputt:{
       backgroundColor: '#DCDCDC',
       borderRadius: 4,
       marginBottom: 15,
       marginTop: 5,
-  },
-     
+      color: '#4F4F4F',
+      paddingLeft: 10,
+  },  
   });
 
