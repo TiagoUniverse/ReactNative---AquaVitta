@@ -8,7 +8,7 @@ Seja Bem vindo ao README da Aqua Vitta versão mobile. Logo abaixo se encontra a
 
 ## ➡️Introdução
 
-A empresa Aires é especializada em monitoramento e qualidade de pontos específicos de rios e, para realizar esta tarefa, ela possui um conjunto de sensores para enviar dados para a sua base de dados. No momento atual a empresa precisa fazer todo esse registro através de um computador, dificultando os novos cadastros e atualizações dos pontos de rios. Diante dessa problemática de falta de mobilidade, nossa equipe do 3ª período foi contatada para desenvolver uma solução mobile para salvar os rios e seus dados.
+Quando se trata de cadastro e monitoramento de pontos de rios, muitas aplicações trabalham de forma física e dependente do uso de um computador. Isso resulta em atraso na entrega dos dados e perda de eficiência do tempo, além da dificuldade para atualizar os registros de pontos de rios. Diante dessa problemática de falta de mobilidade, nossa equipe do 3ª período foi contatada para desenvolver uma solução mobile para salvar os rios e seus dados.
 
 ---
 
