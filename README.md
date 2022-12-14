@@ -1,22 +1,61 @@
-# ReactNative---AquaVitta
+<center> <h1>Projeto integrador: Aqua Vitta 💧 </h1> <hr> </center>
+<center> <p> Versão desenvolvida em React Native  </p> </center>
 
-# Aqua-Vita (React Native)
+<br>
+Seja Bem vindo ao README da Aqua Vitta versão mobile. Logo abaixo se encontra as instruções e informações a respeito do processo de desenvolvimento deste projeto.
 
+<br>
 
 ## ➡️Introdução
 
-Aires (Monitoramento da Qualidade da Água): É uma empresa de monitoramente e qualidade de água que possui um conjunto de sensores que enviam dados para um endereço ip predeterminado utilizando socket. Atualmente a empresa possui um servidor é um programa python que coleta esses dados, os organiza em gráficos e registra este arquivo no formato log. Entratanto, eles não possuem uma interface mobile e Para usar em seria interessante ter um aplicativo para trabalho em campo que crie um access point e funcione como um datalogger para esses sensores 
-
-Tendo isso em mente, foi-se planejado um projeto integrador em parceria com alunos do 3ª período da faculdade SENAC de análise e desenvolvimento de sistemas.
+A empresa Aires é especializada em monitoramento e qualidade de pontos específicos de rios e, para realizar esta tarefa, ela possui um conjunto de sensores para enviar dados para a sua base de dados. No momento atual a empresa precisa fazer todo esse registro através de um computador, dificultando os novos cadastros e atualizações dos pontos de rios. Diante dessa problemática de falta de mobilidade, nossa equipe do 3ª período foi contatada para desenvolver uma solução mobile para salvar os rios e seus dados.
 
 ---
 
-## 🎯 Objetivo
-Levantamento de apps para monitoramento de qualidade de água de rios e reservatórios em aplicação de React native.
+## 🎯 Objetivo do projeto
+Desenvolver um aplicativo mobile para registrar e monitorar os pontos, com telas navegáveis de fácil acesso.
 
-## Link
-https://aquavitta.netlify.app/
+
+## ⚙ Tecnologias utilizadas
+<li><b>React Native:</b> Biblioteca javascript usada para desenvolver aplicações para sistemas Android e Ios com a interface mais eficiente e nativa.</li> 
+<li><b>Python:</b> Linguagem de programação BACK END utilizada para desenvolver um servidor API com suas rotas para as requesições do projeto.</li> 
+<li><b>IDE:</b> Ambiente de Desenvolvimento Integrado, onde foi feita toda a automação do teste. No projeto foi utilizado o Visual Studio Code. </li>
+<li><b>Figma:</b> Editor gráfico de vetor e prototipagem de projetos de design baseado principalmente no navegador web, com ferramentas offline adicionais para aplicações desktop. </li>
+
 ---
+
+# 🏃 Como executar o projeto
+<li> Instale o NodeJS para poder executar o comando de instalação do projeto no link: https://nodejs.org/en/download/
+
+<br>
+
+<li>Abra o aplicativo CMD do seu computador. Voce pode selecionar uma pasta do seu computador com o comando: <br> cd Downloads
+
+<br>
+
+
+<li>Para clonar o repositório escreva o comando abaixo: </li> 
+git clone https://github.com/TiagoUniverse/ReactNative---AquaVitta
+
+<br>
+<li> Entre na pasta que foi criada do projeto: <br> 
+cd ReactNative---AquaVitta
+<br>
+
+<br>
+<li> Digite o comando abaixo para instalar os pacotes do projeto: <br>
+npm install
+
+<br>
+<li>Digite o comando "expo start" ou "npm start". Caso não funcione, digite "npm run start" e a aplicação será aberta no navegador.
+
+<br>
+
+<li> Depois que o comando for executado, você pode visualizar o projeto pelo seu celular ao baixar o aplicativo "EXPO GO". Feito isso, você pode ler o QR Code disponiblizado no CMD.
+
+<br>
+
+
 
 ## ☕ Equipe
 
