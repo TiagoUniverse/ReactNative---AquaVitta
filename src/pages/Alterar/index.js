@@ -23,7 +23,7 @@ export default function Alterar() {
     fetch(endpoint)
       .then(resposta => resposta.json())
         .catch(() => {
-          Alert.alert('Erro', 'Rio alterado com sucesso!');
+          Alert.alert('Alteração', 'Ponto de rio alterado com sucesso!');
         });
   }
 

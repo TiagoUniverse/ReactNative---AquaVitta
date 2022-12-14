@@ -23,7 +23,7 @@ export default function Alterar() {
     fetch(endpoint)
       .then(resposta => resposta.json())
         .catch(() => {
-          Alert.alert('Sucesso', 'Rio deletado com sucesso!');
+          Alert.alert('Exclusão', 'Ponto de rio deletado com sucesso!');
         });
   }
 

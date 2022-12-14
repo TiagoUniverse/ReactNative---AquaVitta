@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { View, Text, ScrollView } from "react-native"
-import { Button, TextInput, StyleSheet } from "react-native";
-import ResultImc from "./ResultImc";
+import {Alert, Button, TextInput, StyleSheet } from "react-native";
+import Result from "./Result";
 
 
 export default function Form() {
@@ -17,7 +17,6 @@ export default function Form() {
     const [salinidade, setSalinidade] = useState(null)
     const [turbidez, setTurbidez] = useState(null)
     const [message, setmessage] = useState("Preencha as informações do ponto de rio")
-    const [imc, setImc] = useState(null)
     const [textButton, setTextButton] = useState("Cadastrar")
 
 
@@ -28,11 +27,11 @@ export default function Form() {
         fetch(endpoint)
           .then(resposta => resposta.json())
             .catch(() => {
-              Alert.alert('Erro', 'Não foi possível fazer o cadastro');
+              Alert.alert('Cadastro', 'Ponto de rio cadastrado com sucesso');
             });
       }
 
-    function validationImc() {
+    function validation() {
         if (nomeRio != null && endereco != null && latitude != null && longitude != null) {
             cadastrarRio()
             setNomeRio(null)
@@ -42,7 +41,6 @@ export default function Form() {
             setTextButton("Cadastro finalizado")
             return
         }
-        setImc(null)
         setTextButton("Cadastrar")
         setmessage("Preencha no mínimo as informações: Nome do ponto do rio, endereço, latitude e longitude")
     }
@@ -135,11 +133,11 @@ export default function Form() {
 
                 <Button
                     title={textButton}
-                    onPress={() => validationImc()}
+                    onPress={() => validation()}
                 />
             </View>
 
-            <ResultImc messageResultImc={message} ResultImc={imc} />
+            <Result messageResult={message} />
 
         </ScrollView>
     );

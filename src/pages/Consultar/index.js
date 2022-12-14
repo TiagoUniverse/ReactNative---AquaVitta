@@ -28,7 +28,7 @@ export default function Consultar(){
             setRioEscolhido(rio);
           })
           .catch(() => {
-            Alert.alert('Sucesso', 'Rio consultado!');
+            Alert.alert('Falha na busca', 'Não encontrei nenhum rio com este nome!');
           });
     }
   

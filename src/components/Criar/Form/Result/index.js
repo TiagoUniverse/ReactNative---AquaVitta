@@ -3,7 +3,7 @@ import { View, Text } from "react-native"
 
 
 
-export default function ResultText(props) {
+export default function Result(props) {
     return (
         <View>
             <Text>{props.messageResult}  </Text>
